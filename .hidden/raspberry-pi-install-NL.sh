@@ -1,15 +1,15 @@
 #!/bin/sh/
 clear
-echo "Dit Script is gemaakt door Patrick Pigmans voor Servicenet ITF"
+echo "Dit Script is gemaakt door Patrick Pigmans"
 echo
 sleep 2
-echo "Service pi OS is maakt door Patrick Pigmans voor Servicenet ITF"
+echo "Pat pi OS is maakt door Patrick Pigmans"
 echo
 sleep 2
 echo "Ubuntu shell 16.04 is tijdelijk uitgeschakeled vanwege technische fouten, deze zal weer toegankelijk zijn als dit is opgelost"
 echo
 sleep 2
-echo "Welkom bij het Service pi Installatie script, dit script zal er voor zorgen dat de laaste nieuwe software zal worden geinstalleert op de Raspberry PI met Service pi OS draaiende."
+echo "Welkom bij het Raspberry pi Installatie script, dit script zal er voor zorgen dat de laaste nieuwe software zal worden geinstalleert op de Raspberry PI met Pat pi OS draaiende."
 sleep 1
 echo
 echo "Dit zal helaas behoorlijk wat tijd in beslag nemen, maar zodra hij geinstalleert is werkt alles zoals het behoord en is alles geupdate" 
