@@ -16,6 +16,9 @@ echo
 sleep 2
 echo "Please note that the Shell version 16.04 is Experimental"
 echo "let op, Shell versie 16.04 is experimenteel"
+sleep 2
+echo "WARNING DO NOT ATTEMPT TO DOWNGRADE FROM A HIGHER VERSION TO A LOWER ONE, THIS WILL END UP WITH YOU REINSTALLING"
+echo "WAARSCHUWING, PROBEER NIET TE DOWNGRADEN VAN EEN HOGERE VERSIE NAAR EEN LAGERE, DIT ZORGT ER VOOR DAT U OPNIEUW MOET INSTALLEREN"
 sleep 3
 read -p "Do you with to upgrade to a new shell version? (Y/N)"
 echo "Wilt u upgraden naar een nieuwe shell versie? (Y/N)"
