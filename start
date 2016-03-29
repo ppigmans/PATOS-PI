@@ -20,8 +20,8 @@ echo
 rm /bin/sh
 cp /bin/bash /bin/sh
 clear
-echo "This script is made by Patrick Pigmans for Servicenet ITF"
-echo "Dit Script is gemaakt door Patrick Pigmans voor Servicenet ITF"
+echo "This script is made by Patrick Pigmans"
+echo "Dit Script is gemaakt door Patrick Pigmans"
 sleep 1
 echo
 echo "if you have not done so already please exit this script and type fdisk /dev/mmcblk0 and press the following keys one after another:"

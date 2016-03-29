@@ -1,12 +1,12 @@
 #!/bin/sh
 clear
-echo "Welcome to the Shell upgrade script made by Patrick Pigmans for Servicenet ITF"
+echo "Welcome to the Shell upgrade script made by Patrick Pigmans"
 echo
-echo "Welkom bij het Shell upgrade script gemaakt door Patrick Pigmans voor Servicenet ITF"
+echo "Welkom bij het Shell upgrade script gemaakt door Patrick Pigmans"
 echo
-echo "This script is combined with the service-pi-install scripts"
+echo "This script is combined with the raspberry-pi-install scripts"
 echo
-echo "Dit script werkt samen met service-pi-install scripts"
+echo "Dit script werkt samen met raspberry-pi-install scripts"
 echo
 lsb_release -a
 echo
