@@ -6,9 +6,6 @@ sleep 2
 echo "Pat pi OS is maakt door Patrick Pigmans"
 echo
 sleep 2
-echo "Ubuntu shell 16.04 is tijdelijk uitgeschakeled vanwege technische fouten, deze zal weer toegankelijk zijn als dit is opgelost"
-echo
-sleep 2
 echo "Welkom bij het Raspberry pi Installatie script, dit script zal er voor zorgen dat de laaste nieuwe software zal worden geinstalleert op de Raspberry PI met Pat pi OS draaiende."
 sleep 1
 echo
@@ -21,8 +18,8 @@ sleep 1
 echo "enige stroom verlies kan zorgen voor het corruptie van het systeem"
 echo
 sleep 2
-PS3="Kies uw DE (1-7)(LXQT is nog niet getest, EL = enlightenment):" 
-select name in Verwijderen LXDE XFCE MATE LXQT EL Exit
+PS3="Kies uw DE (1-6)(LXQT is nog niet getest):" 
+select name in Verwijderen LXDE XFCE MATE LXQT Exit
 do 
  	break 
 done 
