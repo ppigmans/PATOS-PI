@@ -21,14 +21,20 @@ sleep 1
 echo "enige stroom verlies kan zorgen voor het corruptie van het systeem"
 echo
 sleep 2
-read -p "Wilt u alles eerst verwijderen van vorige DE's? (Y/N)"
+PS3="Kies uw DE (1-7)(LXQT is nog niet getest, EL = enlightenment):" 
+select name in Verwijderen LXDE XFCE MATE LXQT EL Exit
+do 
+ 	break 
+done 
+echo "U koos $name."
+
+if [ "$name" = "Verwijderen" ]; then
+echo 
+echo "Begin van het verwijderen"
 echo
-if [[ ! $REPLY =~ ^[Yy]$ ]]
-	then
-	echo
-else
-echo "verwijderen"
 sleep 3
+apt-get -f install -y
+apt-get -q remove --purge -y ntp*
 apt-get -f install -y
 apt-get -q remove --purge -y lxde*
 apt-get -f install -y
@@ -71,14 +77,6 @@ reboot
 exit 1
 fi
 
-PS3= "Kies uw DE (1-5)(LXQT is nog niet getest, EL = enlightenment):" 
-select name in LXDE XFCE LXQT MATE EL
-do 
- 	break 
-done 
-echo "U koos $name."
-
-
 if [ "$name" = "LXDE" ]; then
 echo 
 echo "Begin installatie van LXDE "
@@ -118,6 +116,8 @@ apt-get -f install -y
 dpkg -i ./.hidden/NX.deb
 apt-get -f install -y
 dpkg -i ./.hidden/citrix-rec.deb
+apt-get -f install -y
+apt-get -q install ntp -y
 apt-get -f install -y
 ln /usr/lib/arm-linux-gnueabihf/libcurl.so /usr/lib/arm-linux-gnueabihf/libcurl.so.4
 ln -s /usr/share/ca-certificates/mozilla/* /opt/Citrix/ICAClient/keystore/cacerts
@@ -222,6 +222,7 @@ apt-get -qq remove chromium*
 apt-get -f install -y
 modprobe snd-bcm2835
 echo
+cp ./.hidden/ntp.conf /etc/ntp.conf
 sleep 2
 echo "Herstarten"
 echo "Na de herstart typ het volgende"
@@ -238,24 +239,43 @@ echo
 echo "Begin installatie van LXQT"
 echo
 sleep 3
-
+apt-get -f install -y
 apt-get -q update
+apt-get -f install -y
 apt-get -q install plymouth -y
+apt-get -f install -y
 apt-get -q install plymouth-themes -y
+apt-get -f install -y
 apt-get -q install plymouth-label -y
+apt-get -f install -y
 apt-get -q install lxqt -y
+apt-get -f install -y
 apt-get -q install lightdm -y
+apt-get -f install -y
 apt-get -q install xinit -y
+apt-get -f install -y
 apt-get -q install git -y
+apt-get -f install -y
 apt-get -q install curlftpfs -y
+apt-get -f install -y
 apt-get -q install curl -y
+apt-get -f install -y
 apt-get -q install alacarte -y
+apt-get -f install -y
 apt-get -q install libcurl4-gnutls-dev -y
+apt-get -f install -y
 apt-get -q install xcompmgr -y
+apt-get -f install -y
 apt-get -q install linux-firmware
+apt-get -f install -y
 apt-get -q install libxerces-c3.1 -y
+apt-get -f install -y
 dpkg -i ./.hidden/NX.deb
+apt-get -f install -y
 dpkg -i ./.hidden/citrix-rec.deb
+apt-get -f install -y
+apt-get -q install ntp -y
+apt-get -f install -y
 ln /usr/lib/arm-linux-gnueabihf/libcurl.so /usr/lib/arm-linux-gnueabihf/libcurl.so.4
 ln -s /usr/share/ca-certificates/mozilla/* /opt/Citrix/ICAClient/keystore/cacerts
 c_rehash /opt/Citrix/ICAClient/keystore/cacerts
@@ -356,6 +376,7 @@ echo "Begin herschrijven van lightdm-gtk-greeter.conf en overige bestanden in pl
 apt-get remove pulseaudio -y
 modprobe snd-bcm2835
 echo
+cp ./.hidden/ntp.conf /etc/ntp.conf
 sleep 2
 echo "Herstarten"
 echo "Na de herstart typ het volgende"
@@ -407,6 +428,8 @@ apt-get -f install -y
 dpkg -i ./.hidden/NX.deb
 apt-get -f install -y
 dpkg -i ./.hidden/citrix-rec.deb
+apt-get -f install -y
+apt-get -q install ntp -y
 apt-get -f install -y
 ln /usr/lib/arm-linux-gnueabihf/libcurl.so /usr/lib/arm-linux-gnueabihf/libcurl.so.4
 ln -s /usr/share/ca-certificates/mozilla/* /opt/Citrix/ICAClient/keystore/cacerts
@@ -499,6 +522,7 @@ apt-get -f install -y
 modprobe snd-bcm2835
 sleep 2
 echo
+cp ./.hidden/ntp.conf /etc/ntp.conf
 echo "Herstarten"
 echo "Na de herstart typ het volgende"
 echo "amixer cset numid=3 1"
@@ -551,9 +575,11 @@ apt-get -q install linux-firmware
 apt-get -f install -y
 apt-get -q install libxerces-c3.1 -y
 apt-get -f install -y
-dpkg -i ./.hidden/NX.debF
+dpkg -i ./.hidden/NX.deb
 apt-get -f install -y
 dpkg -i ./.hidden/citrix-rec.deb
+apt-get -f install -y
+apt-get -q install ntp -y
 apt-get -f install -y
 ln /usr/lib/arm-linux-gnueabihf/libcurl.so /usr/lib/arm-linux-gnueabihf/libcurl.so.4
 ln -s /usr/share/ca-certificates/mozilla/* /opt/Citrix/ICAClient/keystore/cacerts
@@ -648,12 +674,15 @@ sleep 2
 echo "Section \"ServerFlags\" " >> /etc/X11/xorg.conf
 echo "	Option \"DontVTSwitch\" \"true\" " >> /etc/X11/xorg.conf
 echo "EndSection" >> /etc/X11/xorg.conf
+apt-get -f install -y
 apt-get remove pulseaudio -y
+apt-get -f install -y
 modprobe snd-bcm2835
 echo mate-session > /home/ubuntu/.xsession
 echo mate-session > /root/
 sleep 2
 echo
+cp ./.hidden/ntp.conf /etc/ntp.conf
 echo "Herstarten"
 echo "Na de herstart typ het volgende"
 echo "amixer cset numid=3 1"
@@ -664,3 +693,7 @@ history -c
 echo `reboot`
 exit 1
 fi
+
+if [ "$name" = "Exit" ]; then
+echo 
+echo "Afsluiten van script"
