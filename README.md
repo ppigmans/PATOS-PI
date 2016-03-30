@@ -1,2 +1,6 @@
-do /root/rpiui/sh start and follow the instructions
-typ /root/rpiui/sh start en volg de instructies
+ga naar de folder waar u deze git clone gebruikt en typ
+
+sh ./start
+
+
+Werkt enkel bij raspberry pi 2b
